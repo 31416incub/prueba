@@ -6,25 +6,22 @@ body {
     background: #fafafa;
 }
 
-/* Grid de los títulos principales */
-.header-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    margin-bottom: 18px;
-    gap: 30px;
+/* Títulos de las secciones */
+.titulo-editor-texto, .titulo-editor-boton, .titulo-previa {
+    margin: 0 0 15px 0;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #1a5d4e;
 }
-.titulo-crear {
-    justify-self: start;
-    margin: 0;
-    font-size: 1.5em;
+.titulo-editor-texto {
     color: #222;
 }
-.titulo-previa {
-    justify-self: end;
-    margin: 0;
-    font-size: 1.5em;
+.titulo-editor-boton {
     color: #1a5d4e;
+}
+.titulo-previa {
+    color: #1a5d4e;
+    text-align: center;
 }
 
 /* =====================
@@ -102,22 +99,35 @@ body {
     height: 100%;
     width: 100%;
     padding: 20px 10px 10px 10px;
+    position: relative; /* Para posicionamiento absoluto del botón */
+    overflow: hidden; /* Para que el botón no se salga del contenedor */
 }
-.vista-previa h3 {
-    margin: 0 0 10px 0;
-    font-size: 1.1em;
-    color: #1a5d4e;
-    font-weight: 600;
-    text-align: center;
-}
+
 #boton-vista-previa {
     padding: 12px 30px;
     font-size: 18px;
     border: 2px solid #333;
     background: #fff;
-    cursor: pointer;
+    cursor: grab; /* Cambiar cursor para indicar que es arrastrable */
     transition: all 0.2s;
-    margin-top: 10px;
+    position: absolute; /* Posicionamiento absoluto para poder arrastrarlo */
+    user-select: none; /* Evitar selección de texto al arrastrar */
+    z-index: 10; /* Asegurar que esté por encima */
+    /* La posición inicial se maneja desde JavaScript */
+}
+
+/* Estilos para cuando se está arrastrando */
+#boton-vista-previa:active {
+    cursor: grabbing;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Estilos para el estado de arrastre */
+#boton-vista-previa.dragging {
+    opacity: 0.8;
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
 
 /* =====================
@@ -125,9 +135,12 @@ body {
    ===================== */
 nav {
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 .menu-btn {
-    margin-right: 10px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
