@@ -198,5 +198,18 @@
         if (forma) forma.addEventListener('change', actualizarEstiloBoton);
         if (colorBorde) colorBorde.addEventListener('input', actualizarEstiloBoton);
         if (anchoBorde) anchoBorde.addEventListener('input', actualizarEstiloBoton);
+        
+        document.getElementById('imagen-fondo').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                const vistaPrevia = document.querySelector('.vista-previa');
+                vistaPrevia.style.backgroundImage = `url('${evt.target.result}')`;
+                vistaPrevia.style.backgroundSize = 'cover';
+                vistaPrevia.style.backgroundPosition = 'center';
+            };
+            reader.readAsDataURL(file);
+        });
     })();
 })();
