@@ -35,6 +35,23 @@
             <label>Imagen de fondo:
                 <input type="file" id="imagen-fondo" accept="image/*">
             </label>
+            <label>Color de fondo:
+                <input type="color" id="color-fondo-boton" value="#ffffff">
+            </label>
+            <label>Color de texto:
+                <input type="color" id="color-texto-boton" value="#000000">
+            </label>
+            <label>Fuente:
+                <select id="fuente-texto-boton">
+                    <option value="Arial">Arial</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Tahoma">Tahoma</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                </select>
+            </label>
         </div>
     </div>
     <!-- Vista previa -->
