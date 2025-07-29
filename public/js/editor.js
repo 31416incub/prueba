@@ -2,9 +2,9 @@
     // Seleccionamos los elementos del editor de texto y la vista previa
     const toolbar = document.querySelector('.toolbar');
     const editable = document.getElementById('texto-editable');
-    const textoVista = document.getElementById('texto-vista-previa');
-    const botonVista = document.getElementById('boton-vista-previa');
     const vistaPrevia = document.querySelector('.vista-previa');
+    const agregarBoton = document.getElementById('agregar-boton');
+    const eliminarBoton = document.getElementById('eliminar-boton');
 
     // Variables para el drag and drop
     let isDragging = false;
@@ -14,6 +14,8 @@
     let initialY;
     let xOffset = 0;
     let yOffset = 0;
+    
+    let botonVista = null; // Variable para almacenar el botón de vista previa
 
     // Función para inicializar la posición del botón
     function inicializarPosicionBoton() {
@@ -22,17 +24,17 @@
             xOffset = 0;
             yOffset = 235;
             
-            setTranslate(xOffset, yOffset, botonVista);
+            pos_inicial(xOffset, yOffset, botonVista);
         }
     }
 
     // Función para establecer la posición del botón
-    function setTranslate(xPos, yPos, el) {
+    function pos_inicial(xPos, yPos, el) {
         el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
     }
 
     // Función para obtener la posición del mouse
-    function dragStart(e) {
+    function desplazar_ini(e) {
         if (e.type === "touchstart") {
             initialX = e.touches[0].clientX - xOffset;
             initialY = e.touches[0].clientY - yOffset;
@@ -73,7 +75,7 @@
             xOffset = Math.max(minX, Math.min(xOffset, maxX));
             yOffset = Math.max(minY, Math.min(yOffset, maxY));
 
-            setTranslate(xOffset, yOffset, botonVista);
+            pos_inicial(xOffset, yOffset, botonVista);
         }
     }
 
@@ -82,83 +84,119 @@
         initialX = currentX;
         initialY = currentY;
         isDragging = false;
-        botonVista.classList.remove('dragging');
+        if (botonVista) {
+            botonVista.classList.remove('dragging');
+        }
     }
 
-    // Agregar event listeners para drag and drop
-    if (botonVista && vistaPrevia) {
-        // Mouse events
-        botonVista.addEventListener('mousedown', dragStart);
+    // Función para crear y agregar el botón a la vista previa
+    function crearBotonVista() {
+        if (botonVista) return; // Solo permitir un botón por ahora
+        
+        botonVista = document.createElement('button');
+        botonVista.id = 'boton-vista-previa';
+        const span = document.createElement('span');
+        span.id = 'texto-vista-previa';
+        span.textContent = editable.textContent || "Botón"; // Texto por defecto
+        botonVista.appendChild(span);
+        vistaPrevia.appendChild(botonVista);
+        
+        // Configurar estilos iniciales
+        botonVista.style.position = 'absolute';
+        botonVista.style.cursor = 'move';
+        
+        // Inicializar posición y eventos
+        inicializarPosicionBoton();
+        actualizarEstiloBoton();
+        
+        // Agregar event listeners para drag and drop
+        botonVista.addEventListener('mousedown', desplazar_ini);
+        botonVista.addEventListener('touchstart', desplazar_ini, { passive: false });
         document.addEventListener('mousemove', drag);
         document.addEventListener('mouseup', dragEnd);
-        
-        // Touch events para dispositivos móviles
-        botonVista.addEventListener('touchstart', dragStart, { passive: false });
         document.addEventListener('touchmove', drag, { passive: false });
         document.addEventListener('touchend', dragEnd);
-        
-        // Inicializar posición cuando se carga la página
-        window.addEventListener('load', inicializarPosicionBoton);
-        window.addEventListener('resize', inicializarPosicionBoton);
-        
-        // También inicializar cuando el DOM esté listo
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', inicializarPosicionBoton);
-        } else {
-            inicializarPosicionBoton();
+    }
+
+    // Función para eliminar el botón de la vista previa
+    function eliminarBotonVista() {
+        if (botonVista) {
+            // Remover event listeners
+            botonVista.removeEventListener('mousedown', desplazar_ini);
+            botonVista.removeEventListener('touchstart', desplazar_ini);
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('mouseup', dragEnd);
+            document.removeEventListener('touchmove', drag);
+            document.removeEventListener('touchend', dragEnd);
+            
+            // Eliminar el botón
+            vistaPrevia.removeChild(botonVista);
+            botonVista = null;
         }
     }
 
     // Esta función copia el texto (y su formato) al área de vista previa
     function actualizarTextoVista() {
-        if (textoVista && editable) {
-            textoVista.innerHTML = editable.innerHTML;
+        if (botonVista && editable) {
+            const span = botonVista.querySelector('#texto-vista-previa');
+            if (span) {
+                span.innerHTML = editable.innerHTML;
+            }
         }
     }
-
-    // Si existen los elementos del editor de texto
-    if (toolbar && editable && textoVista) {
-        // Cuando se hace clic en un botón (negrita, cursiva, subrayado)
-        toolbar.addEventListener('click', function(e) {
-            if (e.target.dataset.cmd) {
-                editable.focus(); // Nos aseguramos de que el texto editable esté activo
-                document.execCommand(e.target.dataset.cmd, false, null); // Aplicamos el formato
-                actualizarTextoVista(); // Mostramos el cambio en la vista previa
-            }
-        });
-        // Cuando se escribe o cambia el texto, lo actualizamos en la vista previa
-        editable.addEventListener('input', actualizarTextoVista);
-        // También actualizamos cuando se deja de editar
-        editable.addEventListener('blur', actualizarTextoVista);
-        // Al cargar, mostramos el texto inicial en la vista previa
-        actualizarTextoVista();
-    }
-
-    // Seleccionamos los controles para cambiar el botón
-    const forma = document.getElementById('forma-boton');
-    const colorBorde = document.getElementById('color-borde');
-    const anchoBorde = document.getElementById('ancho-borde');
 
     // Esta función cambia la forma y el borde del botón de vista previa
     function actualizarEstiloBoton() {
         if (!botonVista) return;
+        
+        const forma = document.getElementById('forma-boton');
+        const colorBorde = document.getElementById('color-borde');
+        const anchoBorde = document.getElementById('ancho-borde');
+        
         // Cambiamos la forma del botón
         let borderRadius = '4px';
         if (forma && forma.value === 'round') borderRadius = '20px';
         if (forma && forma.value === 'oval') borderRadius = '50px 20px';
         if (forma && forma.value === 'circle') borderRadius = '50%';
         botonVista.style.borderRadius = borderRadius;
+        
         // Cambiamos el color y el ancho del borde
         if (colorBorde) botonVista.style.borderColor = colorBorde.value;
         if (anchoBorde) botonVista.style.borderWidth = anchoBorde.value + 'px';
         botonVista.style.borderStyle = 'solid';
     }
 
-    // Si existen los controles, escuchamos los cambios y actualizamos el botón
-    if (forma && colorBorde && anchoBorde && botonVista) {
-        forma.addEventListener('change', actualizarEstiloBoton);
-        colorBorde.addEventListener('input', actualizarEstiloBoton);
-        anchoBorde.addEventListener('input', actualizarEstiloBoton);
-        actualizarEstiloBoton(); // Mostramos el estilo inicial
-    }
-})(); 
+    // Inicialización cuando el DOM esté listo
+    (function init() {
+        // Eventos para los botones de agregar/eliminar
+        if (agregarBoton) {
+            agregarBoton.addEventListener('click', crearBotonVista);
+        }
+        if (eliminarBoton) {
+            eliminarBoton.addEventListener('click', eliminarBotonVista);
+        }
+        
+        // Eventos para el editor de texto
+        if (toolbar && editable) {
+            toolbar.addEventListener('click', function(e) {
+                if (e.target.dataset.cmd) {
+                    editable.focus();
+                    document.execCommand(e.target.dataset.cmd, false, null);
+                    actualizarTextoVista();
+                }
+            });
+            
+            editable.addEventListener('input', actualizarTextoVista);
+            editable.addEventListener('blur', actualizarTextoVista);
+        }
+        
+        // Eventos para los controles de estilo del botón
+        const forma = document.getElementById('forma-boton');
+        const colorBorde = document.getElementById('color-borde');
+        const anchoBorde = document.getElementById('ancho-borde');
+        
+        if (forma) forma.addEventListener('change', actualizarEstiloBoton);
+        if (colorBorde) colorBorde.addEventListener('input', actualizarEstiloBoton);
+        if (anchoBorde) anchoBorde.addEventListener('input', actualizarEstiloBoton);
+    })();
+})();

@@ -16,6 +16,8 @@
     <div class="div2">
         <h2 class="titulo-editor-boton">Editor de botón</h2>
         <div class="editor-boton">
+            <button type="button" id="agregar-boton">Agregar botón</button>
+            <button type="button" id="eliminar-boton">Eliminar botón</button>
             <label>Forma:
                 <select id="forma-boton">
                     <option value="rect">Rectángulo</option>
@@ -36,7 +38,7 @@
     <div class="div3">
         <h2 class="titulo-previa">Vista previa</h2>
         <div class="vista-previa">
-            <button id="boton-vista-previa"><span id="texto-vista-previa"></span></button>
+            <!-- El botón se agregará dinámicamente aquí -->
         </div>
     </div>
 </div>
