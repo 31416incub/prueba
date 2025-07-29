@@ -194,10 +194,39 @@
         const forma = document.getElementById('forma-boton');
         const colorBorde = document.getElementById('color-borde');
         const anchoBorde = document.getElementById('ancho-borde');
+        const colorFondo = document.getElementById('color-fondo-boton');
+        const colorTexto = document.getElementById('color-texto-boton');
+        const fuenteTexto = document.getElementById('fuente-texto-boton');
         
-        if (forma) forma.addEventListener('change', actualizarEstiloBoton);
-        if (colorBorde) colorBorde.addEventListener('input', actualizarEstiloBoton);
-        if (anchoBorde) anchoBorde.addEventListener('input', actualizarEstiloBoton);
+        if (colorFondo) {
+            colorFondo.addEventListener('input', function() {
+                if (botonVista) {
+                    botonVista.style.backgroundColor = colorFondo.value;
+                }
+            });
+        }
+        
+        if (colorTexto) {
+            colorTexto.addEventListener('input', function() {
+                if (botonVista) {
+                    const span = botonVista.querySelector('#texto-vista-previa');
+                    if (span) {
+                        span.style.color = colorTexto.value;
+                    }
+                }
+            });
+        }
+
+        if (fuenteTexto) {
+            fuenteTexto.addEventListener('change', function() {
+                if (botonVista) {
+                    const span = botonVista.querySelector('#texto-vista-previa');
+                    if (span) {
+                        span.style.fontFamily = fuenteTexto.value;
+                    }
+                }
+            });
+        }
         
         document.getElementById('imagen-fondo').addEventListener('change', function(e) {
             const file = e.target.files[0];
@@ -209,6 +238,10 @@
                 vistaPrevia.style.backgroundSize = 'cover';
                 vistaPrevia.style.backgroundPosition = 'center';
             };
+            reader.readAsDataURL(file);
+        });
+    })();
+})();
             reader.readAsDataURL(file);
         });
     })();
