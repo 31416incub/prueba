@@ -32,6 +32,9 @@
             <label>Ancho de borde:
                 <input type="number" id="ancho-borde" min="1" max="10" value="2"> px
             </label>
+            <label>Imagen de fondo:
+                <input type="file" id="imagen-fondo" accept="image/*">
+            </label>
         </div>
     </div>
     <!-- Vista previa -->
@@ -43,4 +46,4 @@
     </div>
 </div>
 <!-- Script que hace funcionar el editor -->
-<script src="js/editor.js"></script> 
+<script src="js/editor.js"></script>
