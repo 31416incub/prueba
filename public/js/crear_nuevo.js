@@ -1,3 +1,25 @@
+/* 
+Sitio web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl
+Creado, Programado y Diseñado por Itred Spa.
+BPPJ
+*/
+
+/*  --------------------------------------------------------------------------------------------------------------------------- 
+     ------------------------------------------------ INICIO ITred Spa crear_nuevo .js ----------------------------------------------
+     ----------------------------------------------------------------------------------------------------------------------- */
+
+/* ------------------------
+     -- INICIO CONEXION BD --
+     ------------------------ */
+
+        /*vacio*/
+
+/* ------------------------
+     -- TERMINO CONEXION BD --
+     ------------------------ */
 (function() {
     // Seleccionamos los elementos del editor de texto y la vista previa
     const toolbar = document.querySelector('.toolbar');
