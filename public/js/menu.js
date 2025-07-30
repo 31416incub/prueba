@@ -18,7 +18,7 @@ function cargarContenido(archivo) {
             // Si es la vista de crear nuevo, carga el JS del editor
             if (archivo === 'crear_nuevo.php') {
                 const script = document.createElement('script');
-                script.src = '../js/editor.js';
+                script.src = '../js/crear_nuevo.js';
                 script.onload = () => {
                     // Opcional: puedes poner aquí código para inicializar algo extra si lo necesitas
                 };

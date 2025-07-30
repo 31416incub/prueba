@@ -1,11 +1,27 @@
-<?php
-// Si usas autoload de Composer, mantenlo
-require __DIR__ . '/../vendor/autoload.php';
+<!--
+Sitio web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl
+Creado, Programado y Diseñado por Itred Spa.
+BPPJ
+-->
 
-// Incluye el menú principal
+<!-- --------------------------------------------------------------------------------------------------------------------------- 
+     ------------------------------------------------ INICIO ITred Spa index .php ----------------------------------------------
+     ----------------------------------------------------------------------------------------------------------------------- -->
+
+<!-- ------------------------
+     -- INICIO CONEXION BD --
+     ------------------------ -->
+
+        <!--vacio-->
+
+<!-- ------------------------
+     -- TERMINO CONEXION BD --
+     ------------------------ -->
+
+<?php
 include 'menu.php';
 ?>
-<div id="contenido-dinamico">
-    <p>Selecciona una opción del menú.</p>
-</div>
 
