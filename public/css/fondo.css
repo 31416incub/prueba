@@ -1,0 +1,15 @@
+/* ===================== FONDO ===================== */
+body {
+    background: #fafafa;
+    font-family: Arial, sans-serif;
+}
+
+/* ===================== COLOR FONDO ===================== */
+.fondo-editor input[type="color"] {
+    margin: 10px 0;
+}
+
+/* ===================== AGREGAR IMAGEN FONDO ===================== */
+.fondo-editor input[type="file"] {
+    margin: 10px 0;
+}

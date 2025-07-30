@@ -25,7 +25,7 @@ BPPJ
      ------------------------ */
 const rutas = {
     'btn-prediseno': 'prediseno.php',
-    'btn-crear_nuevo': 'crear_nuevo.php',
+    'btn-crear_nuevo': 'fondo.php',
     'btn-modificar': 'modificar.php',
     'btn-eliminar': 'eliminar.php'
 };
@@ -46,9 +46,9 @@ function cargarContenido(archivo) {
         .then(html => {
             contenidoDiv.innerHTML = html;
             // Si es la vista de crear nuevo, carga el JS del editor
-            if (archivo === 'crear_nuevo.php') {
+            if (archivo === 'fondo.php') {
                 const script = document.createElement('script');
-                script.src = '../js/crear_nuevo.js';
+                script.src = '../js/fondo.js';
                 script.onload = () => {
                     // Opcional: puedes poner aquí código para inicializar algo extra si lo necesitas
                 };
