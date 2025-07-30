@@ -62,5 +62,3 @@
         </div>
     </div>
 </div>
-<!-- Script que hace funcionar el editor -->
-<script src="js/editor.js"></script>

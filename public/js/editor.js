@@ -243,6 +243,4 @@
     })();
 })();
             reader.readAsDataURL(file);
-        });
-    })();
-})();
+
