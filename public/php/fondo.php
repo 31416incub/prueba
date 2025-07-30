@@ -44,8 +44,9 @@ BPPJ
     <div class="div2">
         <h2 class="titulo-editor-boton">Editor de botón</h2>
         <div class="editor-boton">
-            <button type="button" id="agregar-boton">Agregar botón</button>
-            <button type="button" id="eliminar-boton">Eliminar botón</button>
+            <button type="button" id="agregar-boton">Agregar botón</button> <!-- Añadir el botón editable -->
+            <button type="button" id="eliminar-boton">Eliminar botón</button> <!-- Eliminar el botón editable -->
+            <!-- Label para darle la forma al boton -->
             <label>Forma:
                 <select id="forma-boton">
                     <option value="rect">Rectángulo</option>
@@ -54,21 +55,23 @@ BPPJ
                     <option value="circle">Círculo</option>
                 </select>
             </label>
+            <!-- Personalización del boton -->
             <label>Color de borde:
-                <input type="color" id="color-borde" value="#333333">
+                <input type="color" id="color-borde" value="#333333"> <!-- Color del borde -->
             </label>
             <label>Ancho de borde:
-                <input type="number" id="ancho-borde" min="1" max="10" value="2"> px
+                <input type="number" id="ancho-borde" min="1" max="10" value="2"> px <!-- Ancho del borde en pixeles -->
             </label>
             <label>Imagen de fondo:
-                <input type="file" id="imagen-fondo" accept="image/*">
+                <input type="file" id="imagen-fondo" accept="image/*"> <!-- Imagen de fondo -->
             </label>
             <label>Color de fondo:
-                <input type="color" id="color-fondo-boton" value="#ffffff">
+                <input type="color" id="color-fondo-boton" value="#ffffff"> <!-- Color de fondo -->
             </label>
             <label>Color de texto:
-                <input type="color" id="color-texto-boton" value="#000000">
+                <input type="color" id="color-texto-boton" value="#000000"> <!-- Color del texto -->
             </label>
+            <!-- Label con distintas fuentes para el texto del boton -->
             <label>Fuente:
                 <select id="fuente-texto-boton">
                     <option value="Arial">Arial</option>

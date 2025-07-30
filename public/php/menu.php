@@ -11,4 +11,4 @@
     <h2>Bienvenido al menú</h2>
     <p>Selecciona una opción para ver su contenido.</p>
 </div>
-<script src="../js/menu.js"></script>
+<script src="../js/menu.js"></script> <!-- JavaScript adjuntado menu.js -->
