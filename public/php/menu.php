@@ -29,6 +29,9 @@ BPPJ
     <link rel="stylesheet" href="../css/menu.css">
 </head>
 <body>
+     <!-- ---------------------------------------------------------------
+                      titulo menu
+     -------------------------------------------------- -->
     <div class="menu">
         <button id="btn-prediseno" class="activo">Prediseño</button>
         <button id="btn-crear_nuevo">Crear nuevo</button>

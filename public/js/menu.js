@@ -20,8 +20,9 @@ BPPJ
 /* ------------------------
      -- TERMINO CONEXION BD --
      ------------------------ */
-
-// Asocia cada botón con su archivo PHP correspondiente
+/* ------------------------
+     -- titulo rutas de botones --
+     ------------------------ */
 const rutas = {
     'btn-prediseno': 'prediseno.php',
     'btn-crear_nuevo': 'crear_nuevo.php',
@@ -29,10 +30,16 @@ const rutas = {
     'btn-eliminar': 'eliminar.php'
 };
 
+/* ------------------------
+     -- titulo variables del php--
+     ------------------------ */
+
 const contenidoDiv = document.getElementById('contenido');
 const menuBotones = document.querySelectorAll('.menu button');
 
-// Función para cargar el contenido PHP por AJAX
+/* ------------------------
+Función para cargar el contenido PHP por AJAX
+ ------------------------ */
 function cargarContenido(archivo) {
     fetch(`./${archivo}`)
         .then(response => response.text())
@@ -53,7 +60,9 @@ function cargarContenido(archivo) {
         });
 }
 
-// Asigna el evento a cada botón
+/* ------------------------
+     -- titulo asignar eventos a cada boton--
+     ------------------------ */
 menuBotones.forEach(boton => {
     boton.addEventListener('click', function() {
         // Quitar clase activo de todos

@@ -23,7 +23,10 @@ BPPJ
 
 <!-- Vista para crear un nuevo botón editable -->
 <div class="parent">
-    <!-- Editor de texto -->
+    <!-- ---------------------------------------------------------------
+                      titulo Editor de texto 
+     -------------------------------------------------- -->
+  
     <div class="div1">
         <h2 class="titulo-editor-texto">Editor de texto</h2>
         <div class="editor-texto">
@@ -35,7 +38,9 @@ BPPJ
             <div id="texto-editable" contenteditable="true" class="editable-area"></div>
         </div>
     </div>
-    <!-- Editor de botón -->
+     <!-- ---------------------------------------------------------------
+                      titulo Editor de boton 
+     -------------------------------------------------- -->
     <div class="div2">
         <h2 class="titulo-editor-boton">Editor de botón</h2>
         <div class="editor-boton">
@@ -77,7 +82,9 @@ BPPJ
             </label>
         </div>
     </div>
-    <!-- Vista previa -->
+     <!-- ---------------------------------------------------------------
+                      titulo vista previa
+     -------------------------------------------------- -->
     <div class="div3">
         <h2 class="titulo-previa">Vista previa</h2>
         <div class="vista-previa">

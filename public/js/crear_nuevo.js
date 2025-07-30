@@ -20,6 +20,10 @@ BPPJ
 /* ------------------------
      -- TERMINO CONEXION BD --
      ------------------------ */
+
+/* ------------------------
+     -- titulo variables del php--
+     ------------------------ */
 (function() {
     // Seleccionamos los elementos del editor de texto y la vista previa
     const toolbar = document.querySelector('.toolbar');
@@ -27,6 +31,9 @@ BPPJ
     const vistaPrevia = document.querySelector('.vista-previa');
     const agregarBoton = document.getElementById('agregar-boton');
     const eliminarBoton = document.getElementById('eliminar-boton');
+    /* ------------------------
+     -- titulo funcion de arrastre--
+     ------------------------ */
 
     // Variables para el drag and drop
     let isDragging = false;
@@ -110,7 +117,9 @@ BPPJ
             botonVista.classList.remove('dragging');
         }
     }
-
+/* ------------------------
+     -- titulo agreagar boton--
+     ------------------------ */
     // Función para crear y agregar el botón a la vista previa
     function crearBotonVista() {
         if (botonVista) return; // Solo permitir un botón por ahora
@@ -139,7 +148,9 @@ BPPJ
         document.addEventListener('touchmove', drag, { passive: false });
         document.addEventListener('touchend', dragEnd);
     }
-
+/* ------------------------
+     -- titulo eliminar boton--
+     ------------------------ */
     // Función para eliminar el botón de la vista previa
     function eliminarBotonVista() {
         if (botonVista) {
@@ -156,7 +167,9 @@ BPPJ
             botonVista = null;
         }
     }
-
+/* ------------------------
+     -- titulo editar boton--
+     ------------------------ */
     // Esta función copia el texto (y su formato) al área de vista previa
     function actualizarTextoVista() {
         if (botonVista && editable) {
@@ -187,7 +200,9 @@ BPPJ
         if (anchoBorde) botonVista.style.borderWidth = anchoBorde.value + 'px';
         botonVista.style.borderStyle = 'solid';
     }
-
+/* ------------------------
+     --  eventos de botones--
+     ------------------------ */
     // Inicialización cuando el DOM esté listo
     (function init() {
         // Eventos para los botones de agregar/eliminar
