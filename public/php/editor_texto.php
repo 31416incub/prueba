@@ -1,28 +1,41 @@
-
 <!--
-Sitio web Creado por ITred Spa.
+Sitio Web Creado por ITred Spa.
 Direccion: Guido Reni #4190
 Pedro Aguirre Cerda - Santiago - Chile
-contacto@itred.cl
-Creado, Programado y Diseñado por Itred Spa.
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
 BPPJ
 -->
 
-<!-- --------------------------------------------------------------------------------------------------------------------------- 
-     ------------------------------------------------ INICIO ITred Spa editor_texto.php ----------------------------------------
-     --------------------------------------------------------------------------------------------------------------------------->
+<!-- ------------------------------------------------------------------------------------------------------------
+     ------------------------------------- INICIO ITred Spa editor_texto .PHP --------------------------------
+     ------------------------------------------------------------------------------------------------------------ -->
 
 <!-- ------------------------
      -- INICIO CONEXION BD --
      ------------------------ -->
 
-<!--vacio-->
+    <?php
+        // Establece la conexión a la base de datos de editor_elemento
+        $mysqli = new mysqli('localhost', 'root', '', 'editor_elemento_bd');
+    ?>
 
-<!-- ------------------------
-     -- TERMINO CONEXION BD --
-     ------------------------ -->
+<!-- ---------------------
+     -- FIN CONEXION BD --
+     --------------------- -->
 
 <!-- editor_texto.php -->
+<!DOCTYPE html> <!--inicio del documento html-->
+<html lang="es"> <!--lenguaje español-->
+<head> <!--carga de metadatos del documento-->
+    <meta charset="UTF-8">    <!--codificacion de caracteres UTF-8-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--configuracion de vista para dispositivos moviles-->
+    <title>ITred Spa - Editor de Texto</title> <!--titulo de la pagina-->
+    <link rel="stylesheet" href="../css/editor_texto.css"> <!--carga de estilos para editor de texto-->
+</head> <!--fin del head-->
+<body> <!--inicio del body-->
+
 
 <!-- ===================== FONDO ===================== -->
 <div style="background:#fafafa; padding:10px;"> <!--inicio div con fondo y padding para el editor de texto-->
@@ -41,7 +54,10 @@ BPPJ
         <button data-cmd="insertUnorderedList">UL</button> <!--boton para lista desordenada-->
     </div> <!--fin div toolbar-->
 </div> <!--fin div con fondo y padding-->
+<script src="../js/editor_texto.js"></script> <!--carga del script para funcionalidad del editor de texto-->
 
+</body> <!--fin del body-->
+</html> <!--fin del html--> 
 <!-- --------------------------------------------------------------------------------------------------------------------------- 
      ------------------------------------------------ fin ITred editor_texto.php -----------------------------------------------
      --------------------------------------------------------------------------------------------------------------------------->

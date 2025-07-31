@@ -1,0 +1,60 @@
+/* 
+Sitio web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl
+Creado, Programado y Diseñado por Itred Spa.
+BPPJ
+*/
+
+/*  --------------------------------------------------------------------------------------------------------------------------- 
+     ------------------------------------------------ INICIO ITred Spa editor_fondo.css ---------------------------------------
+     ----------------------------------------------------------------------------------------------------------------------- */
+
+body { /* Establece el fondo de la página */
+            font-family: Arial, sans-serif; /* Fuente por defecto */
+        } 
+        .menu { /* Estilo del menú de navegación */
+            display: flex; /* Utiliza flexbox para el diseño del menú */
+            gap: 10px; /* Espacio entre los botones del menú */
+            margin-bottom: 20px; /* Margen inferior del menú */
+        }
+        .menu button {
+            padding: 10px 20px; /* Relleno interno de los botones */    
+            font-size: 16px; /* Tamaño de fuente de los botones */
+            cursor: pointer; /* Cambia el cursor al pasar sobre los botones */
+        } 
+        .contenido { /* Estilo del contenedor de contenido */
+            border: 1px solid #ccc; /* Borde del contenedor */
+            padding: 20px; /* Relleno interno del contenedor */
+            min-height: 200px; /* Altura mínima del contenedor */
+            background: #f9f9f9; /* Color de fondo del contenedor */
+        }
+        .activo { /* Estilo para el botón activo */
+            background-color: #007bff; /* Color de fondo del botón activo */
+            color: white; /* Color del texto del botón activo */
+        } 
+        .vista-previa { /* Estilo de la vista previa */
+            width: 300px; /* Ancho de la vista previa */
+            height: 120px; /* Dimensiones de la vista previa */
+            border: 2px dashed #aaa; /* Borde de la vista previa */
+            background: #f9f9f9; /* Color de fondo de la vista previa */
+            margin: 20px auto; /* Margen automático para centrar la vista previa */
+            position: relative; /* Posicionamiento relativo para la vista previa */
+            display: flex; /* Utiliza flexbox para centrar el contenido */
+            align-items: center; /* Alinea verticalmente el contenido al centro */
+            justify-content: center; /* Alinea horizontalmente el contenido al centro */
+        }
+
+/*  --------------------------------------------------------------------------------------------------------------------------- 
+     ------------------------------------------------ FIN ITred Spa editor_fondo.css ------------------------------------------
+     ----------------------------------------------------------------------------------------------------------------------- */
+
+/*
+Sitio web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl
+Creado, Programado y Diseñado por Itred Spa.
+BPPJ
+*/

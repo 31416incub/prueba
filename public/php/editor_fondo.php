@@ -1,26 +1,40 @@
-
 <!--
-Sitio web Creado por ITred Spa.
+Sitio Web Creado por ITred Spa.
 Direccion: Guido Reni #4190
 Pedro Aguirre Cerda - Santiago - Chile
-contacto@itred.cl
-Creado, Programado y Diseñado por Itred Spa.
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
 BPPJ
 -->
 
-<!-- --------------------------------------------------------------------------------------------------------------------------- 
-     ------------------------------------------------ INICIO ITred Spa editor_fondo.php ----------------------------------------
-     --------------------------------------------------------------------------------------------------------------------------->
+<!-- ------------------------------------------------------------------------------------------------------------
+     ------------------------------------- INICIO ITred Spa editor_fondo .PHP --------------------------------
+     ------------------------------------------------------------------------------------------------------------ -->
 
 <!-- ------------------------
      -- INICIO CONEXION BD --
      ------------------------ -->
 
-<!--vacio-->
+    <?php
+        // Establece la conexión a la base de datos de editor_elemento
+        $mysqli = new mysqli('localhost', 'root', '', 'editor_elemento_bd');
+    ?>
 
-<!-- ------------------------
-     -- TERMINO CONEXION BD --
-     ------------------------ -->
+<!-- ---------------------
+     -- FIN CONEXION BD --
+     --------------------- -->
+
+<!DOCTYPE html> <!--inicio del documento html-->
+<html lang="es"> <!--lenguaje español-->
+<head> <!--carga de metadatos del documento-->
+    <meta charset="UTF-8"> <!--codificacion de caracteres UTF-8-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--configuracion de la vista-->
+    <title>ITred Spa - Editor de Fondo</title> <!--titulo de la pagina-->
+    <link rel="stylesheet" href="../css/editor_fondo.css"> <!--carga de estilos para editor de fondo-->
+</head> <!--fin del head-->
+<body> <!--inicio del body-->
+
 
 <!-- ===================== FONDO ===================== -->
 <div class="fondo-editor"> <!--inicio div clase fondo-editor para editar fondo-->
@@ -36,6 +50,10 @@ BPPJ
     </div> <!--fin div agregar imagen de fondo-->
 </div> <!--fin div clase fondo-editor-->
 
+<script src="../js/editor_fondo.js"></script> <!--carga del script para funcionalidad del editor de fondo-->
+
+</body> <!--fin del body-->
+</html> <!--fin del html-->
 <!-- --------------------------------------------------------------------------------------------------------------------------- 
      ------------------------------------------------ fin ITred editor_fondo.php -----------------------------------------------
      --------------------------------------------------------------------------------------------------------------------------->

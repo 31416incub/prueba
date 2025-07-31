@@ -1,28 +1,41 @@
 <!--
-Sitio web Creado por ITred Spa.
+Sitio Web Creado por ITred Spa.
 Direccion: Guido Reni #4190
 Pedro Aguirre Cerda - Santiago - Chile
-contacto@itred.cl
-Creado, Programado y Diseñado por Itred Spa.
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
 BPPJ
 -->
 
-<!-- --------------------------------------------------------------------------------------------------------------------------- 
-     ------------------------------------------------ INICIO ITred Spa menu.php ------------------------------------------------
-     ----------------------------------------------------------------------------------------------------------------------- -->
+<!-- ------------------------------------------------------------------------------------------------------------
+     ------------------------------------- INICIO ITred Spa menu .PHP --------------------------------
+     ------------------------------------------------------------------------------------------------------------ -->
 
 <!-- ------------------------
      -- INICIO CONEXION BD --
      ------------------------ -->
 
-<!--vacio-->
+    <?php
+        // Establece la conexión a la base de datos de editor_elemento
+        $mysqli = new mysqli('localhost', 'root', '', 'editor_elemento_bd');
+    ?>
 
-<!-- ------------------------
-     -- TERMINO CONEXION BD --
-     ------------------------ -->
+<!-- ---------------------
+     -- FIN CONEXION BD --
+     --------------------- -->
 
-<!-- Enlace al archivo CSS que contiene todos los estilos del menú y componentes -->
- <link rel="stylesheet" href="../css/menu.css"> <!--carga de estilos principales del sistema-->
+<!DOCTYPE html> <!--inicio del documento html-->
+<html lang="es"> <!--inicio del html con lenguaje español-->
+<head> <!--carga de metadatos del documento-->
+    <meta charset="UTF-8"> <!--codificacion de caracteres UTF-8-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--configuracion de vista para dispositivos moviles-->
+    <title>menu</title>
+    
+    <!-- Llama al archivo CSS --> 
+    <link rel="stylesheet" href="../css/menu.css">
+</head> <!--fin del head-->
+<body> <!--inicio del body-->
 
 <!-- Contenedor principal del menú de navegación con 4 botones principales -->
 <div class="menu"> <!--inicio div principal del menu de navegacion-->
@@ -101,6 +114,8 @@ BPPJ
 <!-- Enlace al archivo JavaScript que maneja la interactividad del menú y cambio de contenido -->
 <script src="../js/menu.js"></script> <!--carga del script principal para funcionalidad del menu-->
 
+</body>
+</html>
 <!-- --------------------------------------------------------------------------------------------------------------------------- 
      ------------------------------------------------ fin ITred menu.php --------------------------------------------------------
      --------------------------------------------------------------------------------------------------------------------------->
@@ -113,3 +128,4 @@ contacto@itred.cl
 Creado, Programado y Diseñado por Itred Spa.
 BPPJ
 -->
+

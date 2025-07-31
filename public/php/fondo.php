@@ -1,25 +1,38 @@
 <!--
-Sitio web Creado por ITred Spa.
+Sitio Web Creado por ITred Spa.
 Direccion: Guido Reni #4190
 Pedro Aguirre Cerda - Santiago - Chile
-contacto@itred.cl
-Creado, Programado y Diseñado por Itred Spa.
+contacto@itred.cl o itred.spa@gmail.com
+https://www.itred.cl
+Creado, Programado y Diseñado por ITred Spa.
 BPPJ
 -->
 
-<!-- --------------------------------------------------------------------------------------------------------------------------- 
-     ------------------------------------------------ INICIO ITred Spa fondo .php ----------------------------------------------
-     ----------------------------------------------------------------------------------------------------------------------- -->
+<!-- ------------------------------------------------------------------------------------------------------------
+     ------------------------------------- INICIO ITred Spa fondo .PHP --------------------------------
+     ------------------------------------------------------------------------------------------------------------ -->
 
 <!-- ------------------------
      -- INICIO CONEXION BD --
      ------------------------ -->
 
-<!--vacio-->
+    <?php
+        // Establece la conexión a la base de datos de editor_elemento
+        $mysqli = new mysqli('localhost', 'root', '', 'editor_elemento_bd');
+    ?>
 
-<!-- ------------------------
-     -- TERMINO CONEXION BD --
-     ------------------------ -->
+<!-- ---------------------
+     -- FIN CONEXION BD --
+     --------------------- -->
+<!DOCTYPE html> <!--inicio del documento html-->
+<html lang="es"> <!--lenguaje español-->
+<head> <!--carga de metadatos del documento-->
+    <meta charset="UTF-8"> <!--codificacion de caracteres UTF-8-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--configuracion de la vista-->
+    <title>ITred Spa - Editor de Botones</title> <!--titulo de la pagina-->
+    <link rel="stylesheet" href="../css/fondo.css"> <!--carga de estilos para fondo-->
+</head> <!--fin del head-->
+<body> <!--inicio del body-->
 
 <!-- Vista para crear un nuevo botón editable -->
 <div class="parent"> <!--inicio del div donde se inicia el codigo-->
@@ -96,6 +109,10 @@ BPPJ
     </div> <!--fin div clase div3-->
 </div> <!--fin del codigo-->
 
+<script src="../js/fondo.js"></script> <!--carga del script para funcionalidad del editor de fondo-->
+
+</body> <!--fin del body-->
+</html> <!--fin del html-->
 
 <!-- --------------------------------------------------------------------------------------------------------------------------- 
      ------------------------------------------------ fin ITred fondo.php ------------------------------------------------------

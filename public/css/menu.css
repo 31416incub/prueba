@@ -15,19 +15,19 @@ BPPJ
    ESTRUCTURA GENERAL
    ===================== */
 
-body {
-    background: #fafafa;
+body { /* Establece el fondo de la página */
+    background: #fafafa; /* Color de fondo claro */
 }
 
 /* Títulos de las secciones */
-.titulo-editor-texto, .titulo-editor-boton, .titulo-previa {
-    margin: 0 0 15px 0;
-    font-size: 1.3em;
-    font-weight: 600;
-    color: #1a5d4e;
+.titulo-editor-texto, .titulo-editor-boton, .titulo-previa { /* Estilos para los títulos de las secciones */
+    margin: 0 0 15px 0; /* Margen inferior */
+    font-size: 1.3em; /* Tamaño de fuente */
+    font-weight: 600; /* Peso de la fuente */
+    color: #1a5d4e; /* Color del texto */
 }
-.titulo-editor-texto {
-    color: #222;
+.titulo-editor-texto {  /* Estilo específico para el título del editor de texto */
+    color: #222; /* Color del texto */
 }
 .titulo-editor-boton {
     color: #1a5d4e;
