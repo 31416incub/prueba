@@ -72,5 +72,17 @@ menuBotones.forEach(boton => {
     });
 });
 
-// Por defecto mostrar la sección de prediseño (ya está visible en el HTML)
-// No necesitamos cargar nada por defecto porque el contenido ya está integrado
+
+
+/*  --------------------------------------------------------------------------------------------------------------------------- 
+     ------------------------------------------------ FIN ITred Spa menu.js --------------------------------------------------
+     ----------------------------------------------------------------------------------------------------------------------- */
+
+/*
+Sitio web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl
+Creado, Programado y Diseñado por Itred Spa.
+BPPJ
+*/

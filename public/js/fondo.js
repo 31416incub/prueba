@@ -281,3 +281,16 @@ BPPJ
 })();
             reader.readAsDataURL(file); // Leer el archivo como una URL de datos al finalizar la carga
 
+/*  --------------------------------------------------------------------------------------------------------------------------- 
+     ------------------------------------------------ FIN ITred Spa fondo.js -------------------------------------------------
+     ----------------------------------------------------------------------------------------------------------------------- */
+
+/*
+Sitio web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl
+Creado, Programado y Diseñado por Itred Spa.
+BPPJ
+*/
+
