@@ -16,8 +16,8 @@ BPPJ
      ------------------------ */
 (function() {  // Inicia de función que contiene otras funciones y variables
     // Seleccionamos los elementos del editor de texto y la vista previa
-    const toolbar = document.querySelector('.toolbar'); // Toolbar para el editor de texto
-    const editable = document.getElementById('texto-editable'); // Área editable para el texto
+    const barraHerramientas = document.querySelector('.toolbar'); // Barra de herramientas para el editor de texto
+    const areaEditable = document.getElementById('texto-editable'); // Área editable para el texto
     const vistaPrevia = document.querySelector('.vista-previa'); // Área de vista previa donde se mostrará el botón
     const agregarBoton = document.getElementById('agregar-boton'); // Botón para agregar el botón editable
     const eliminarBoton = document.getElementById('eliminar-boton'); // Botón para eliminar el botón editable
@@ -26,13 +26,13 @@ BPPJ
      ------------------------ */
 
     // Variables para el drag and drop
-    let isDragging = false; // Indica si el botón está siendo arrastrado
-    let currentX; // Posición actual del mouse X
-    let currentY; // Posición actual del mouse en Y
-    let initialX; // Posición inicial del mouse X
-    let initialY; // Posición inicial del mouse en Y
-    let xOffset = 0; // Desplazamiento X del botón
-    let yOffset = 0; // Desplazamiento Y del botón
+    let estaArrastrando = false; // Indica si el botón está siendo arrastrado
+    let xActual; // Posición actual del mouse X
+    let yActual; // Posición actual del mouse en Y
+    let xInicial; // Posición inicial del mouse X
+    let yInicial; // Posición inicial del mouse en Y
+    let desplazamientoX = 0; // Desplazamiento X del botón
+    let desplazamientoY = 0; // Desplazamiento Y del botón
     
     let botonVista = null; // Variable para almacenar el botón de vista previa
 
@@ -40,10 +40,10 @@ BPPJ
     function inicializarPosicionBoton() { // funcion que inicializa la posicion del boton
         if (botonVista && vistaPrevia) { // if para verificar si el botonVista y vistaPrevia existen
             // Centrar el botón tanto horizontal como verticalmente en el contenedor
-            xOffset = 0; // Posición X inicial
-            yOffset = 235; // Posición Y inicial
+            desplazamientoX = 0; // Posición X inicial
+            desplazamientoY = 235; // Posición Y inicial
             
-            pos_inicial(xOffset, yOffset, botonVista); // dar la posicion inicial al boton
+            pos_inicial(desplazamientoX, desplazamientoY, botonVista); // dar la posicion inicial al boton
         }
     }
 
@@ -55,34 +55,34 @@ BPPJ
     // Función para obtener la posición del mouse
     function desplazar_ini(e) { // funcion que obtiene la posicion del mouse
         if (e.type === "touchstart") { // if para verificar si el evento es touchstart
-            initialX = e.touches[0].clientX - xOffset; // darle la posicion inicial al mouse en X
-            initialY = e.touches[0].clientY - yOffset; // darle la posicion inicial al mouse en Y
+            xInicial = e.touches[0].clientX - desplazamientoX; // darle la posicion inicial al mouse en X
+            yInicial = e.touches[0].clientY - desplazamientoY; // darle la posicion inicial al mouse en Y
         } else { // else para verificar si el evento no es touchstart
-            initialX = e.clientX - xOffset; // darle la posicion inicial al mouse en X
-            initialY = e.clientY - yOffset; // darle la posicion inicial al mouse en Y
+            xInicial = e.clientX - desplazamientoX; // darle la posicion inicial al mouse en X
+            yInicial = e.clientY - desplazamientoY; // darle la posicion inicial al mouse en Y
         }
 
         if (e.target === botonVista) { // if para verificar si el evento es el botonVista
-            isDragging = true; // booleano para indicar que se esta arrastrando
+            estaArrastrando = true; // booleano para indicar que se esta arrastrando
             botonVista.classList.add('dragging'); // Agregar clase para indicar que se está arrastrando
         }
     }
 
     // Función para arrastrar
     function drag(e) { // funcion que arrastra el boton
-        if (isDragging) { // if para verificar si se esta arrastrando
+        if (estaArrastrando) { // if para verificar si se esta arrastrando
             e.preventDefault(); // Prevenir el comportamiento predeterminado del evento
             
             if (e.type === "touchmove") { // if para verificar si el evento es touchmove
-                currentX = e.touches[0].clientX - initialX; // Obtener la posición actual del mouse en X
-                currentY = e.touches[0].clientY - initialY; // Obtener la posición actual del mouse en Y
+                xActual = e.touches[0].clientX - xInicial; // Obtener la posición actual del mouse en X
+                yActual = e.touches[0].clientY - yInicial; // Obtener la posición actual del mouse en Y
             } else { // else para verificar si el evento no es touchmove
-                currentX = e.clientX - initialX; // Obtener la posición actual del mouse en X
-                currentY = e.clientY - initialY; // Obtener la posición actual del mouse en Y
+                xActual = e.clientX - xInicial; // Obtener la posición actual del mouse en X
+                yActual = e.clientY - yInicial; // Obtener la posición actual del mouse en Y
             }
 
-            xOffset = currentX; // Actualizar el desplazamiento X
-            yOffset = currentY; // Actualizar el desplazamiento Y
+            desplazamientoX = xActual; // Actualizar el desplazamiento X
+            desplazamientoY = yActual; // Actualizar el desplazamiento Y
 
             // Calcular límites para que el botón se mantenga completamente dentro del contenedor
             const minX = -400; // Permitir que se extienda la mitad del botón hacia la izquierda
@@ -91,18 +91,18 @@ BPPJ
             const maxY = 462; // Permitir que se extienda la mitad del botón hacia abajo
             
             // Limitar el movimiento dentro del contenedor completo
-            xOffset = Math.max(minX, Math.min(xOffset, maxX)); // Limitar el desplazamiento X
-            yOffset = Math.max(minY, Math.min(yOffset, maxY)); // Limitar el desplazamiento Y
+            desplazamientoX = Math.max(minX, Math.min(desplazamientoX, maxX)); // Limitar el desplazamiento X
+            desplazamientoY = Math.max(minY, Math.min(desplazamientoY, maxY)); // Limitar el desplazamiento Y
 
-            pos_inicial(xOffset, yOffset, botonVista); // Actualizar la posición del botón
+            pos_inicial(desplazamientoX, desplazamientoY, botonVista); // Actualizar la posición del botón
         }
     }
 
     // Función para terminar el arrastre
     function dragEnd() { // funcion que termina el arrastre del boton
-        initialX = currentX; // Actualizar la posición inicial del mouse en X
-        initialY = currentY; // Actualizar la posición inicial del mouse en Y
-        isDragging = false; // Indicar que ya no se está arrastrando
+        xInicial = xActual; // Actualizar la posición inicial del mouse en X
+        yInicial = yActual; // Actualizar la posición inicial del mouse en Y
+        estaArrastrando = false; // Indicar que ya no se está arrastrando
         if (botonVista) { // Verificar si el botón existe
             botonVista.classList.remove('dragging'); // Remover la clase de arrastre
         }
@@ -118,7 +118,7 @@ BPPJ
         botonVista.id = 'boton-vista-previa'; // Asignar un ID al botón
         const span = document.createElement('span'); // Crear un elemento span para el texto del botón
         span.id = 'texto-vista-previa'; // Asignar un ID al span
-        span.textContent = editable.textContent || "Botón"; // Texto por defecto
+        span.textContent = areaEditable.textContent || "Botón"; // Texto por defecto
         botonVista.appendChild(span); // Agregar el span al botón
         vistaPrevia.appendChild(botonVista); // Agregar el botón a la vista previa
         
@@ -162,10 +162,10 @@ BPPJ
      ------------------------ */
     // Esta función copia el texto (y su formato) al área de vista previa
     function actualizarTextoVista() {
-        if (botonVista && editable) {
+        if (botonVista && areaEditable) {
             const span = botonVista.querySelector('#texto-vista-previa');
             if (span) {
-                span.innerHTML = editable.innerHTML;
+                span.innerHTML = areaEditable.innerHTML;
             }
         }
     }
@@ -204,17 +204,17 @@ BPPJ
         }
         
         // Eventos para el editor de texto
-        if (toolbar && editable) { //if para verificar si el toolbar y editable existen
-            toolbar.addEventListener('click', function(e) { // listener que vigila el evento click del toolbar
+        if (barraHerramientas && areaEditable) { //if para verificar si la barraHerramientas y areaEditable existen
+            barraHerramientas.addEventListener('click', function(e) { // listener que vigila el evento click de la barraHerramientas
                 if (e.target.dataset.cmd) { // Verificar si el botón tiene un comando asociado
-                    editable.focus(); // Enfocar el área editable
+                    areaEditable.focus(); // Enfocar el área editable
                     document.execCommand(e.target.dataset.cmd, false, null); // Ejecutar el comando asociado al botón
                     actualizarTextoVista(); // Actualizar el texto de vista previa
                 }
             });
             
-            editable.addEventListener('input', actualizarTextoVista); // listener que vigila el evento input del editable
-            editable.addEventListener('blur', actualizarTextoVista); // listener que vigila el evento blur del editable
+            areaEditable.addEventListener('input', actualizarTextoVista); // listener que vigila el evento input del areaEditable
+            areaEditable.addEventListener('blur', actualizarTextoVista); // listener que vigila el evento blur del areaEditable
         }
         
         // Eventos para los controles de estilo del botón
