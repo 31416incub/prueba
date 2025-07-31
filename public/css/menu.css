@@ -174,4 +174,24 @@ nav {
     padding: 20px;
     min-height: 150px;
     background: #fafafa;
-} 
+}
+/* =====================
+   TITULO BOTONES CENTRADOS
+   ===================== */
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+}
+
+/* TITULO TAMAÑO BOTONES */
+
+.menu button {
+    font-size: 1.2rem;
+    padding: 12px 32px;
+    min-width: 140px;
+    min-height: 48px;
+    border-radius: 6px;
+}
