@@ -1,0 +1,27 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de editor
+*.swp
+*.swo
+*~
+
+# Archivos de logs
+*.log
+
+# Carpetas de dependencias (si las hay en el futuro)
+node_modules/
+vendor/
+
+# Archivos de configuración local
+.env
+.env.local
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Archivos de respaldo
+*.bak
+*.backup

@@ -1,0 +1,177 @@
+/* 
+Sitio web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl
+Creado, Programado y Diseñado por Itred Spa.
+BPPJ
+*/
+
+/*  --------------------------------------------------------------------------------------------------------------------------- 
+     ------------------------------------------------ INICIO ITred Spa menu.css -----------------------------------------------
+     ----------------------------------------------------------------------------------------------------------------------- */
+
+/* ------------------------
+     -- INICIO CONEXION BD --
+     ------------------------ */
+
+        /*vacio*/
+
+/* ------------------------
+     -- TERMINO CONEXION BD --
+     ------------------------ */
+
+
+/* =====================
+   ESTRUCTURA GENERAL
+   ===================== */
+
+body {
+    background: #fafafa;
+}
+
+/* Títulos de las secciones */
+.titulo-editor-texto, .titulo-editor-boton, .titulo-previa {
+    margin: 0 0 15px 0;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #1a5d4e;
+}
+.titulo-editor-texto {
+    color: #222;
+}
+.titulo-editor-boton {
+    color: #1a5d4e;
+}
+.titulo-previa {
+    color: #1a5d4e;
+    text-align: center;
+}
+
+/* =====================
+   GRID PRINCIPAL DE LA VISTA
+   ===================== */
+.parent {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 50% y 50% */
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 20px;
+    height: 60vh;
+    min-height: 350px;
+}
+
+/* Áreas del grid */
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 2 / 1 / 3 / 2; }
+.div3 { grid-area: 1 / 2 / 3 / 3; display: flex; align-items: flex-start; justify-content: center; }
+
+/* =====================
+   CUADROS DE LOS EDITORES Y VISTA PREVIA
+   ===================== */
+.div1, .div2, .div3 {
+    background: #f4f4f4; /* Fondo claro para todos los cuadros */
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    padding: 20px;
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* =====================
+   EDITOR DE TEXTO Y BOTÓN
+   ===================== */
+.editor-texto, .editor-boton {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+.toolbar button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+.editable-area {
+    min-height: 40px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    background: #fff;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+/* =====================
+   VISTA PREVIA DEL BOTÓN
+   ===================== */
+.vista-previa {
+    background: #e9f7ef;
+    border-radius: 12px;
+    border: 1.5px solid #b2dfdb;
+    min-width: 0;
+    min-height: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    height: 100%;
+    width: 100%;
+    padding: 20px 10px 10px 10px;
+    position: relative; /* Para posicionamiento absoluto del botón */
+    overflow: hidden; /* Para que el botón no se salga del contenedor */
+}
+
+#boton-vista-previa {
+    padding: 12px 30px;
+    font-size: 18px;
+    border: 2px solid #333;
+    background: #fff;
+    cursor: grab; /* Cambiar cursor para indicar que es arrastrable */
+    transition: all 0.2s;
+    position: absolute; /* Posicionamiento absoluto para poder arrastrarlo */
+    user-select: none; /* Evitar selección de texto al arrastrar */
+    z-index: 10; /* Asegurar que esté por encima */
+    /* La posición inicial se maneja desde JavaScript */
+}
+
+/* Estilos para cuando se está arrastrando */
+#boton-vista-previa:active {
+    cursor: grabbing;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Estilos para el estado de arrastre */
+#boton-vista-previa.dragging {
+    opacity: 0.8;
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+/* =====================
+   MENÚ PRINCIPAL (fuera de crear_nuevo.php)
+   ===================== */
+nav {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.menu-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#contenido-dinamico {
+    border: 1px solid #ccc;
+    padding: 20px;
+    min-height: 150px;
+    background: #fafafa;
+} 
