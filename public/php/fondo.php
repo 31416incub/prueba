@@ -95,3 +95,16 @@ BPPJ
         </div><!--fin div de la vista-previa-->
     </div> <!--fin div clase div3-->
 </div> <!--fin del codigo-->
+
+<!-- --------------------------------------------------------------------------------------------------------------------------- 
+     ------------------------------------------------ fin ITred fondo.php ------------------------------------------------------
+     --------------------------------------------------------------------------------------------------------------------------->
+
+<!--
+Sitio web Creado por ITred Spa.
+Direccion: Guido Reni #4190
+Pedro Aguirre Cerda - Santiago - Chile
+contacto@itred.cl
+Creado, Programado y Diseñado por Itred Spa.
+BPPJ
+-->
