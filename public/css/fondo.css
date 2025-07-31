@@ -1,15 +1,15 @@
 /* ===================== FONDO ===================== */
-body {
-    background: #fafafa;
-    font-family: Arial, sans-serif;
+body {  /* Establece el fondo de la página */
+    background: #fafafa; /* Color de fondo claro */
+    font-family: Arial, sans-serif; /* Fuente por defecto */
 }
 
 /* ===================== COLOR FONDO ===================== */
-.fondo-editor input[type="color"] {
-    margin: 10px 0;
+.fondo-editor input[type="color"] { /* Estilo para el selector de color */
+    margin: 10px 0; /* Margen superior e inferior */
 }
 
 /* ===================== AGREGAR IMAGEN FONDO ===================== */
-.fondo-editor input[type="file"] {
-    margin: 10px 0;
+.fondo-editor input[type="file"] { /* Estilo para el selector de archivos */
+    margin: 10px 0; /* Margen superior e inferior */
 }
