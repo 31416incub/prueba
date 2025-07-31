@@ -9,7 +9,7 @@ BPPJ
 -->
 
 <!-- ------------------------------------------------------------------------------------------------------------
-     ------------------------------------- INICIO ITred Spa menu .PHP --------------------------------
+     ------------------------------------- INICIO ITred Spa menu .PHP -------------------------------------------
      ------------------------------------------------------------------------------------------------------------ -->
 
 <!-- ------------------------
@@ -61,47 +61,7 @@ BPPJ
 
 <!-- Contenedor principal donde se muestra el contenido de cada sección seleccionada -->
 <div class="contenido" id="contenido"> <!--inicio div contenedor principal para mostrar contenido dinamico-->
-    
-    <!-- 
-        ========================================================================================
-        SUBSECCIÓN: PREDISEÑO
-        DESCRIPCIÓN: Contenido y opciones para elementos prediseñados del sistema
-        ========================================================================================
-    -->
-    
-    <!-- Título principal de la sección Prediseño -->
-    <h2>Vista Prediseñado</h2> <!--titulo principal de la seccion prediseño-->
-    
-    <!-- Descripción y contenido de la sección Prediseño -->
-    <p>Contenido de la opción prediseñado.</p> <!--descripcion del contenido prediseñado-->
-    
-
-    <!-- 
-        ========================================================================================
-        SUBSECCIÓN: MODIFICAR
-        DESCRIPCIÓN: Herramientas y opciones para modificar elementos existentes
-        ========================================================================================
-    -->
-    
-    <!-- Título principal de la sección Modificar -->
-    <h2>Modificar</h2> <!--titulo principal de la seccion modificar-->
-    
-    <!-- Descripción y contenido de la sección Modificar -->
-    <p>Contenido de la opción modificar.</p> <!--descripcion del contenido modificar-->
-    
-    <!-- 
-        ========================================================================================
-        SUBSECCIÓN: ELIMINAR
-        DESCRIPCIÓN: Herramientas y opciones para eliminar elementos del sistema
-        ========================================================================================
-    -->
-    
-    <!-- Título principal de la sección Eliminar -->
-    <h2>Eliminar</h2> <!--titulo principal de la seccion eliminar-->
-    
-    <!-- Descripción y contenido de la sección Eliminar -->
-    <p>Contenido de la opción eliminar.</p> <!--descripcion del contenido eliminar-->
-    
+    <!-- El contenido se cargará dinámicamente según el botón seleccionado -->
 </div> <!--fin div contenedor principal de contenido dinamico-->
 
 <!-- 

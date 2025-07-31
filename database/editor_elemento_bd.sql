@@ -35,14 +35,23 @@ USE `editor_elemento_bd`;
 -- ----------------------------------------------------------
 -- Estructura de tabla para la tabla `c_boton_crear_nuevo` --
 -- ----------------------------------------------------------
+ID 
+NOMBRE 
+APELLIDO
 
 -- --------------------------------------------------------
 -- Estructura de tabla para la tabla `eb_m1_m_m2_pr_boton_modificar` --
 -- --------------------------------------------------------
+ID 
+NOMBRE 
+APELLIDO
 
 -- -------------------------------------------------------
 -- Estructura de tabla para la tabla `e_boton_eliminar` --
 -- -------------------------------------------------------
+ID 
+NOMBRE 
+APELLIDO
 
 -- -------------------------------------------
 -- Estructura de tabla para la tabla `fondo` --
