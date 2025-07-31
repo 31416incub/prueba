@@ -1,5 +1,3 @@
-
-<<<<<<< HEAD
 <!--
 Sitio web Creado por ITred Spa.
 Direccion: Guido Reni #4190
@@ -10,7 +8,7 @@ BPPJ
 -->
 
 <!-- --------------------------------------------------------------------------------------------------------------------------- 
-     ------------------------------------------------ INICIO ITred Spa menu.php ------------------------------------------------
+     ------------------------------------------------ INICIO ITred Spa fondo .php ----------------------------------------------
      ----------------------------------------------------------------------------------------------------------------------- -->
 
 <!-- ------------------------
@@ -22,8 +20,6 @@ BPPJ
 <!-- ------------------------
      -- TERMINO CONEXION BD --
      ------------------------ -->
-
-
 <!-- Enlace al archivo CSS que contiene todos los estilos del menú y componentes -->
  <link rel="stylesheet" href="../css/menu.css">
 
@@ -94,21 +90,12 @@ BPPJ
     
 </div>
 
+<!-- 
+    ====================================================================================================
+    SECCIÓN: SCRIPTS JAVASCRIPT
+    DESCRIPCIÓN: Carga del archivo JavaScript que controla la funcionalidad del menú
+    ====================================================================================================
+-->
 
 <!-- Enlace al archivo JavaScript que maneja la interactividad del menú y cambio de contenido -->
 <script src="../js/menu.js"></script>
-=======
-<!-- ===================== BOTÓN PREDISEÑADO, CREAR NUEVO, MODIFICAR, ELIMINAR ===================== -->
- <link rel="stylesheet" href="../css/menu.css">
-<div class="menu">
-    <button id="btn-prediseno" class="activo">Prediseño</button>
-    <button id="btn-crear_nuevo">Crear nuevo</button>
-    <button id="btn-modificar">Modificar</button>
-    <button id="btn-eliminar">Eliminar</button>
-</div>
-<div class="contenido" id="contenido">
-    <h2>Bienvenido al menú</h2>
-    <p>Selecciona una opción para ver su contenido.</p>
-</div>
-<script src="../js/menu.js"></script> <!-- JavaScript adjuntado menu.js -->
->>>>>>> 73b639b83a3d3676eef4e61fcef27f7a72c91c46
