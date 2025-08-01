@@ -14,175 +14,313 @@ BPPJ
 /* =====================
    ESTRUCTURA GENERAL
    ===================== */
-
-body { /* Establece el fondo de la página */
-    background: #fafafa; /* Color de fondo claro */
+/* TITULO BODY */
+body {
+    /* Establece el fondo de la página */
+    background: #fafafa;
+    /* Color de fondo claro */
 }
 
 /* Títulos de las secciones */
-.titulo-editor-texto, .titulo-editor-boton, .titulo-previa { /* Estilos para los títulos de las secciones */
-    margin: 0 0 15px 0; /* Margen inferior */
-    font-size: 1.3em; /* Tamaño de fuente */
-    font-weight: 600; /* Peso de la fuente */
-    color: #1a5d4e; /* Color del texto */
+.titulo-editor-texto,
+.titulo-editor-boton,
+.titulo-previa {
+    /* Estilos para los títulos de las secciones */
+    margin: 0 0 15px 0;
+    /* Margen inferior */
+    font-size: 1.3em;
+    /* Tamaño de fuente */
+    font-weight: 600;
+    /* Peso de la fuente */
+    color: #1a5d4e;
+    /* Color del texto */
 }
-.titulo-editor-texto {  /* Estilo específico para el título del editor de texto */
-    color: #222; /* Color del texto */
+
+.titulo-editor-texto {
+    /* Estilo específico para el título del editor de texto */
+    color: #222;
+    /* Color del texto */
 }
-.titulo-editor-boton { /* Estilo específico para el título del editor de botón */
-    color: #1a5d4e; /* Color del texto */
+
+.titulo-editor-boton {
+    /* Estilo específico para el título del editor de botón */
+    color: #1a5d4e;
+    /* Color del texto */
 }
-.titulo-previa { /* Estilo específico para el título de la vista previa */
-    color: #1a5d4e; /* Color del texto */
-    text-align: center; /* Alineación del texto al centro */
+
+.titulo-previa {
+    /* Estilo específico para el título de la vista previa */
+    color: #1a5d4e;
+    /* Color del texto */
+    text-align: center;
+    /* Alineación del texto al centro */
 }
 
 /* =====================
    GRID PRINCIPAL DE LA VISTA
    ===================== */
-.parent { /* Contenedor principal del grid */
-    display: grid; /* Establece el contenedor como un grid */
-    grid-template-columns: 1fr 1fr; /* 50% y 50% */
-    grid-template-rows: 1fr 1fr; /* 50% y 50% */
-    grid-column-gap: 30px; /* Espacio entre columnas */
-    grid-row-gap: 20px; /* Espacio entre filas */
-    height: 60vh; /* Altura del grid */
-    min-height: 350px; /* Altura mínima del grid */
+.parent {
+    /* Contenedor principal del grid */
+    display: grid;
+    /* Establece el contenedor como un grid */
+    grid-template-columns: 1fr 1fr;
+    /* 50% y 50% */
+    grid-template-rows: 1fr 1fr;
+    /* 50% y 50% */
+    grid-column-gap: 30px;
+    /* Espacio entre columnas */
+    grid-row-gap: 20px;
+    /* Espacio entre filas */
+    height: 60vh;
+    /* Altura del grid */
+    min-height: 350px;
+    /* Altura mínima del grid */
 }
 
 /* Áreas del grid */
-.div1 { grid-area: 1 / 1 / 2 / 2; } /* Área del editor de texto */
-.div2 { grid-area: 2 / 1 / 3 / 2; } /* Área del editor de botón */
-.div3 { grid-area: 1 / 2 / 3 / 3; display: flex; align-items: flex-start; justify-content: center; } /* Área de vista previa del botón */
+.div1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+/* Área del editor de texto */
+.div2 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+/* Área del editor de botón */
+.div3 {
+    grid-area: 1 / 2 / 3 / 3;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* Área de vista previa del botón */
 
 /* =====================
    CUADROS DE LOS EDITORES Y VISTA PREVIA
    ===================== */
-.div1, .div2, .div3 {
-    background: #f4f4f4; /* Fondo claro para todos los cuadros */
-    border-radius: 10px; /* Bordes redondeados */
-    border: 1px solid #ddd; /* Borde delgado */
-    box-sizing: border-box; /* Incluye el padding y el borde en el ancho y alto total */
-    padding: 20px; /* Espacio interno */
-    min-width: 0; /* Permite que el contenido se ajuste sin romper el diseño */
-    min-height: 0; /* Permite que el contenido se ajuste sin romper el diseño */
-    display: flex; /* Establece el contenedor como flex */
-    flex-direction: column; /* Dirección de los elementos flex */
-    justify-content: flex-start; /* Alinea los elementos al inicio del contenedor */
+.div1,
+.div2,
+.div3 {
+    background: #f4f4f4;
+    /* Fondo claro para todos los cuadros */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    border: 1px solid #ddd;
+    /* Borde delgado */
+    box-sizing: border-box;
+    /* Incluye el padding y el borde en el ancho y alto total */
+    padding: 20px;
+    /* Espacio interno */
+    min-width: 0;
+    /* Permite que el contenido se ajuste sin romper el diseño */
+    min-height: 0;
+    /* Permite que el contenido se ajuste sin romper el diseño */
+    display: flex;
+    /* Establece el contenedor como flex */
+    flex-direction: column;
+    /* Dirección de los elementos flex */
+    justify-content: flex-start;
+    /* Alinea los elementos al inicio del contenedor */
 }
 
 /* =====================
    EDITOR DE TEXTO Y BOTÓN
    ===================== */
-.editor-texto, .editor-boton { /* Estilos para los editores de texto y botón */
-    background: transparent; /* Fondo transparente */
-    border: none; /* Sin borde */
-    padding: 0; /* Sin padding */
-    margin-bottom: 0; /* Sin margen inferior */
+.editor-texto,
+.editor-boton {
+    /* Estilos para los editores de texto y botón */
+    background: transparent;
+    /* Fondo transparente */
+    border: none;
+    /* Sin borde */
+    padding: 0;
+    /* Sin padding */
+    margin-bottom: 0;
+    /* Sin margen inferior */
 }
-.toolbar button { /* Estilos para los botones de la barra de herramientas */
-    margin-right: 5px; /* Margen derecho */
-    padding: 5px 10px; /* Padding interno */
-    font-size: 16px; /* Tamaño de fuente */
+
+.toolbar button {
+    /* Estilos para los botones de la barra de herramientas */
+    margin-right: 5px;
+    /* Margen derecho */
+    padding: 5px 10px;
+    /* Padding interno */
+    font-size: 16px;
+    /* Tamaño de fuente */
 }
-.editable-area { /* Área editable*/
-    min-height: 40px; /* Altura mínima */
-    border: 1px solid #ccc; /* Borde delgado */
-    padding: 8px; /* Padding interno */
-    background: #fff; /* Fondo blanco */
-    margin-top: 10px; /* Margen superior */
-    border-radius: 4px; /* Bordes redondeados */
+
+.editable-area {
+    /* Área editable*/
+    min-height: 40px;
+    /* Altura mínima */
+    border: 1px solid #ccc;
+    /* Borde delgado */
+    padding: 8px;
+    /* Padding interno */
+    background: #fff;
+    /* Fondo blanco */
+    margin-top: 10px;
+    /* Margen superior */
+    border-radius: 4px;
+    /* Bordes redondeados */
 }
 
 /* =====================
    VISTA PREVIA DEL BOTÓN
    ===================== */
-.vista-previa { /* Estilos para la vista previa del botón */
-    background: #e9f7ef; /* Fondo claro */
-    border-radius: 12px; /* Bordes redondeados */
-    border: 1.5px solid #b2dfdb; /* Borde delgado */
-    min-width: 0; /* Permite que el contenido se ajuste sin romper el diseño */
-    min-height: 0; /* Permite que el contenido se ajuste sin romper el diseño */
-    box-sizing: border-box; /* Incluye el padding y el borde en el ancho y alto total */
-    display: flex; /* Establece el contenedor como flex */
-    flex-direction: column; /* Dirección de los elementos flex */
-    align-items: center; /* Alinea los elementos al centro */
-    justify-content: flex-start; /* Alinea los elementos al inicio del contenedor */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* Sombra sutil */
-    height: 100%; /* Altura completa del contenedor */
-    width: 100%; /* Ancho completo del contenedor */
-    padding: 20px 10px 10px 10px; /* Padding interno */
-    position: relative; /* Para posicionamiento absoluto del botón */
-    overflow: hidden; /* Para que el botón no se salga del contenedor */
+.vista-previa {
+    /* Estilos para la vista previa del botón */
+    background: #e9f7ef;
+    /* Fondo claro */
+    border-radius: 12px;
+    /* Bordes redondeados */
+    border: 1.5px solid #b2dfdb;
+    /* Borde delgado */
+    min-width: 0;
+    /* Permite que el contenido se ajuste sin romper el diseño */
+    min-height: 0;
+    /* Permite que el contenido se ajuste sin romper el diseño */
+    box-sizing: border-box;
+    /* Incluye el padding y el borde en el ancho y alto total */
+    display: flex;
+    /* Establece el contenedor como flex */
+    flex-direction: column;
+    /* Dirección de los elementos flex */
+    align-items: center;
+    /* Alinea los elementos al centro */
+    justify-content: flex-start;
+    /* Alinea los elementos al inicio del contenedor */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    /* Sombra sutil */
+    height: 100%;
+    /* Altura completa del contenedor */
+    width: 100%;
+    /* Ancho completo del contenedor */
+    padding: 20px 10px 10px 10px;
+    /* Padding interno */
+    position: relative;
+    /* Para posicionamiento absoluto del botón */
+    overflow: hidden;
+    /* Para que el botón no se salga del contenedor */
 }
 
-#boton-vista-previa { /* Estilos para el botón de vista previa */
-    padding: 12px 30px; /* Padding interno */
-    font-size: 18px; /* Tamaño de fuente */
-    border: 2px solid #333; /* Borde delgado */
-    background: #fff; /* Fondo blanco */
-    cursor: grab; /* Cambiar cursor para indicar que es arrastrable */
+#boton-vista-previa {
+    /* Estilos para el botón de vista previa */
+    padding: 12px 30px;
+    /* Padding interno */
+    font-size: 18px;
+    /* Tamaño de fuente */
+    border: 2px solid #333;
+    /* Borde delgado */
+    background: #fff;
+    /* Fondo blanco */
+    cursor: grab;
+    /* Cambiar cursor para indicar que es arrastrable */
     transition: all 0.2s;
-    position: absolute; /* Posicionamiento absoluto para poder arrastrarlo */
-    user-select: none; /* Evitar selección de texto al arrastrar */
-    z-index: 10; /* Asegurar que esté por encima */
+    position: absolute;
+    /* Posicionamiento absoluto para poder arrastrarlo */
+    user-select: none;
+    /* Evitar selección de texto al arrastrar */
+    z-index: 10;
+    /* Asegurar que esté por encima */
     /* La posición inicial se maneja desde JavaScript */
 }
 
 /* Estilos para cuando se está arrastrando */
-#boton-vista-previa:active { /* Cambiar el cursor y aplicar efectos al arrastrar */
-    cursor: grabbing; /* Cambiar cursor a "grabbing" al arrastrar */
-    transform: scale(1.05); /* Escalar ligeramente el botón */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Sombra más pronunciada al arrastrar */
+#boton-vista-previa:active {
+    /* Cambiar el cursor y aplicar efectos al arrastrar */
+    cursor: grabbing;
+    /* Cambiar cursor a "grabbing" al arrastrar */
+    transform: scale(1.05);
+    /* Escalar ligeramente el botón */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    /* Sombra más pronunciada al arrastrar */
 }
 
 /* Estilos para el estado de arrastre */
-#boton-vista-previa.dragging { /* Clase que se aplica al arrastrar */
-    opacity: 0.8; /* Opacidad reducida al arrastrar */
-    transform: scale(1.05); /* Escalar ligeramente el botón */
-    box-shadow: 0 6px 16px rgba(0,0,0,0.3); /* Sombra más pronunciada al arrastrar */
+#boton-vista-previa.dragging {
+    /* Clase que se aplica al arrastrar */
+    opacity: 0.8;
+    /* Opacidad reducida al arrastrar */
+    transform: scale(1.05);
+    /* Escalar ligeramente el botón */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    /* Sombra más pronunciada al arrastrar */
 }
 
 /* =====================
    MENÚ PRINCIPAL (fuera de crear_nuevo.php)
    ===================== */
-nav { /* Estilos para el menú de navegación */
-    margin-bottom: 20px;  /* Margen inferior */
-    display: flex; /* Establece el contenedor como flex */
-    justify-content: center; /* Alinea los elementos al centro */
-    align-items: center; /* Alinea los elementos al centro verticalmente */
-    gap: 10px; /* Espacio entre los botones */
+
+nav {
+    /* Estilos para el menú de navegación */
+    margin-bottom: 20px;
+    /* Margen inferior */
+    display: flex;
+    /* Establece el contenedor como flex */
+    justify-content: center;
+    /* Alinea los elementos al centro */
+    align-items: center;
+    /* Alinea los elementos al centro verticalmente */
+    gap: 10px;
+    /* Espacio entre los botones */
 }
-.menu-btn { /* Estilos para los botones del menú */
-    padding: 10px 20px; /* Padding interno */
-    font-size: 16px; /* Tamaño de fuente */
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
+
+.menu-btn {
+    /* Estilos para los botones del menú */
+    padding: 10px 20px;
+    /* Padding interno */
+    font-size: 16px;
+    /* Tamaño de fuente */
+    cursor: pointer;
+    /* Cambia el cursor al pasar por encima */
 }
-#contenido-dinamico { /* Estilos para el contenedor de contenido dinámico */
-    border: 1px solid #ccc; /* Borde delgado */
-    padding: 20px; /* Padding interno */
-    min-height: 150px; /* Altura mínima */
-    background: #fafafa; /* Fondo claro */
+
+#contenido-dinamico {
+    /* Estilos para el contenedor de contenido dinámico */
+    border: 1px solid #ccc;
+    /* Borde delgado */
+    padding: 20px;
+    /* Padding interno */
+    min-height: 150px;
+    /* Altura mínima */
+    background: #fafafa;
+    /* Fondo claro */
 }
+
 /* =====================
    TITULO BOTONES CENTRADOS
    ===================== */
-.menu { /* Estilos para el menú de botones */
-    display: flex; /* Establece el contenedor como flex */
-    justify-content: center; /* Alinea los elementos al centro horizontalmente */
-    align-items: center; /* Alinea los elementos al centro verticalmente */
-    gap: 10px; /* Espacio entre los botones */
-    margin: 20px auto; /* Margen automático para centrar el menú */
+.menu {
+    /* Estilos para el menú de botones */
+    display: flex;
+    /* Establece el contenedor como flex */
+    justify-content: center;
+    /* Alinea los elementos al centro horizontalmente */
+    align-items: center;
+    /* Alinea los elementos al centro verticalmente */
+    gap: 10px;
+    /* Espacio entre los botones */
+    margin: 20px auto;
+    /* Margen automático para centrar el menú */
 }
 
 /* TITULO TAMAÑO BOTONES */
 
-.menu button { /* Estilos para los botones del menú */
-    font-size: 1.2rem; /* Tamaño de fuente */
-    padding: 12px 32px; /* Padding interno */
-    min-width: 140px; /* Ancho mínimo */
-    min-height: 48px; /* Altura mínima */
-    border-radius: 6px; /* Bordes redondeados */
+.menu button {
+    /* Estilos para los botones del menú */
+    font-size: 1.2rem;
+    /* Tamaño de fuente */
+    padding: 12px 32px;
+    /* Padding interno */
+    min-width: 140px;
+    /* Ancho mínimo */
+    min-height: 48px;
+    /* Altura mínima */
+    border-radius: 6px;
+    /* Bordes redondeados */
 }
 
 /*  --------------------------------------------------------------------------------------------------------------------------- 

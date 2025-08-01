@@ -226,7 +226,7 @@ BPPJ
         const fuenteTexto = document.getElementById('fuente-texto-boton'); //const para obtener el elemento fuente-texto-boton
         // TITULO FONDO
         // TITULO COLOR FONDO
-        
+
         if (colorFondo) { //if para verificar si el colorFondo existe
             colorFondo.addEventListener('input', function () { // listener que vigila el evento input del colorFondo
                 if (botonVista) { //if para verificar si el botonVista existe

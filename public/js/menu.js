@@ -14,26 +14,26 @@ BPPJ
 /* ------------------------
      -- TITULO BOTON PREDISEÑADO--
      ------------------------ */
-     
-    //SIN FUNCION
+
+//SIN FUNCION
 
 /* ------------------------
      -- TITULO BOTON CREAR NUEVO--
      ------------------------ */
 
-    //SIN FUNCION
+//SIN FUNCION
 
 /* ------------------------
      -- TITULO BOTON MODIFICAR--
-     ------------------------ */     
+     ------------------------ */
 
-    //SIN FUNCION
+//SIN FUNCION
 
 /* ------------------------
      -- TITULO BOTON ELIMINAR --
      ------------------------ */
 
-    //SIN FUNCION
+//SIN FUNCION
 
 /* ------------------------
      -- titulo variables del php--
@@ -71,15 +71,16 @@ function mostrarContenido(seccion) {
 }
 
 /* ------------------------
-     -- titulo asignar eventos a cada boton--
+     -- TITULO ASIGNAR EVENTO A CADA BOTON --
      ------------------------ */
+     
 menuBotones.forEach(boton => { // Iterar sobre cada botón del menú
-    boton.addEventListener('click', function() { // Asignar un evento de clic a cada botón
+    boton.addEventListener('click', function () { // Asignar un evento de clic a cada botón
         // Quitar clase activo de todos
         menuBotones.forEach(b => b.classList.remove('activo')); // Quitar la clase activo de todos los botones del menú
         // Agregar clase activo al botón presionado
         this.classList.add('activo'); // Agregar la clase activo al botón que se ha presionado
-        
+
         // Determinar qué sección mostrar basado en el ID del botón
         const seccion = this.id.replace('btn-', ''); // Reemplazar 'btn-' con una cadena vacía para obtener el nombre de la sección
         mostrarContenido(seccion); // Llamar a la función para mostrar el contenido de la sección correspondiente
