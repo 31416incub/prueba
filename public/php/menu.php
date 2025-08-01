@@ -39,15 +39,24 @@ BPPJ
 
 <!-- Contenedor principal del menú de navegación con 4 botones principales -->
 <div class="menu"> <!--inicio div principal del menu de navegacion-->
+        <!-- ---------------------------------------------------------------
+                      TITULO BOTON PREDISEÑADO 
+        -------------------------------------------------- -->
     <!-- Botón para mostrar la sección de Prediseño (activo por defecto) -->
     <button id="btn-prediseno" class="activo">Prediseño</button> <!--boton para mostrar seccion prediseño-->
-    
+        <!-- ---------------------------------------------------------------
+                      TITULO BOTON CREAR NUEVO
+        -------------------------------------------------- -->
     <!-- Botón para mostrar la sección de Crear nuevo elemento -->
     <button id="btn-crear_nuevo">Crear nuevo</button> <!--boton para mostrar seccion crear nuevo-->
-    
+        <!-- ---------------------------------------------------------------
+                      TITULO BOTON MODIFICAR
+        -------------------------------------------------- -->
     <!-- Botón para mostrar la sección de Modificar elementos existentes -->
     <button id="btn-modificar">Modificar</button> <!--boton para mostrar seccion modificar-->
-    
+        <!-- ---------------------------------------------------------------
+                      TITULO BOTON ELIMINAR
+        -------------------------------------------------- -->
     <!-- Botón para mostrar la sección de Eliminar elementos -->
     <button id="btn-eliminar">Eliminar</button> <!--boton para mostrar seccion eliminar-->
 </div> <!--fin div principal del menu-->

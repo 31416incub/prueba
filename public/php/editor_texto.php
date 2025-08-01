@@ -37,14 +37,14 @@ BPPJ
 <body> <!--inicio del body-->
 
 
-<!-- ===================== FONDO ===================== -->
+<!-- ===================== TITULO FONDO ===================== -->
 <div style="background:#fafafa; padding:10px;"> <!--inicio div con fondo y padding para el editor de texto-->
-    <!-- ===================== INGRESAR TEXTO ===================== -->
+    <!-- =====================  TITULO INGRESAR TEXTO ===================== -->
     <div> <!--inicio div para ingresar texto-->
         <label>Texto:</label> <!--label para el campo de texto-->
         <div id="texto-editable" class="editable-area" contenteditable="true"></div> <!--div editable para escribir texto-->
     </div> <!--fin div ingresar texto-->
-    <!-- ===================== NEGRITA, CURSIVA, SUBRAYADO, TACHAR, LISTAS ===================== -->
+    <!-- =====================  TITULO NEGRITA, CURSIVA, SUBRAYADO, TACHAR, LISTAS ===================== -->
     <div class="toolbar"> <!--inicio div toolbar con herramientas de formato-->
         <button data-cmd="bold"><b>N</b></button> <!--boton para aplicar negrita-->
         <button data-cmd="italic"><i>K</i></button> <!--boton para aplicar cursiva-->

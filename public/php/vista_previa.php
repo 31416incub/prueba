@@ -34,6 +34,10 @@ BPPJ
 </head>   <!--fin del head-->
 <body>    <!--inicio del body-->
 
+<!-- ---------------------
+     -- TITULO VISTA PREVIA --
+     --------------------- -->
+
 <div class="vista-previa" id="vista-previa"> <!--inicio div clase vista-previa para mostrar preview-->
     <!-- Aquí se mostrará la vista previa del botón o contenido -->
 </div> <!--fin div vista-previa-->

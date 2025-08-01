@@ -14,7 +14,7 @@ BPPJ
 /* ------------------------
      -- titulo variables del php--
      ------------------------ */
-(function() {  // Inicia de función que contiene otras funciones y variables
+(function () {  // Inicia de función que contiene otras funciones y variables
     // Seleccionamos los elementos del editor de texto y la vista previa
     const barraHerramientas = document.querySelector('.toolbar'); // Barra de herramientas para el editor de texto
     const areaEditable = document.getElementById('texto-editable'); // Área editable para el texto
@@ -33,7 +33,7 @@ BPPJ
     let yInicial; // Posición inicial del mouse en Y
     let desplazamientoX = 0; // Desplazamiento X del botón
     let desplazamientoY = 0; // Desplazamiento Y del botón
-    
+
     let botonVista = null; // Variable para almacenar el botón de vista previa
 
     // Función para inicializar la posición del botón
@@ -42,7 +42,7 @@ BPPJ
             // Centrar el botón tanto horizontal como verticalmente en el contenedor
             desplazamientoX = 0; // Posición X inicial
             desplazamientoY = 235; // Posición Y inicial
-            
+
             pos_inicial(desplazamientoX, desplazamientoY, botonVista); // dar la posicion inicial al boton
         }
     }
@@ -72,7 +72,7 @@ BPPJ
     function drag(e) { // funcion que arrastra el boton
         if (estaArrastrando) { // if para verificar si se esta arrastrando
             e.preventDefault(); // Prevenir el comportamiento predeterminado del evento
-            
+
             if (e.type === "touchmove") { // if para verificar si el evento es touchmove
                 xActual = e.touches[0].clientX - xInicial; // Obtener la posición actual del mouse en X
                 yActual = e.touches[0].clientY - yInicial; // Obtener la posición actual del mouse en Y
@@ -89,7 +89,7 @@ BPPJ
             const maxX = 400; // Permitir que se extienda la mitad del botón hacia la derecha
             const minY = -20; // Permitir que se extienda la mitad del botón hacia arriba
             const maxY = 462; // Permitir que se extienda la mitad del botón hacia abajo
-            
+
             // Limitar el movimiento dentro del contenedor completo
             desplazamientoX = Math.max(minX, Math.min(desplazamientoX, maxX)); // Limitar el desplazamiento X
             desplazamientoY = Math.max(minY, Math.min(desplazamientoY, maxY)); // Limitar el desplazamiento Y
@@ -107,13 +107,13 @@ BPPJ
             botonVista.classList.remove('dragging'); // Remover la clase de arrastre
         }
     }
-/* ------------------------
-     -- titulo agreagar boton--
-     ------------------------ */
+    /* ------------------------
+         -- titulo agregar boton--
+         ------------------------ */
     // Función para crear y agregar el botón a la vista previa
     function crearBotonVista() { // funcion que crea el boton de vista previa
         if (botonVista) return; // Solo permitir un botón por ahora
-        
+
         botonVista = document.createElement('button'); // Crear un nuevo botón
         botonVista.id = 'boton-vista-previa'; // Asignar un ID al botón
         const span = document.createElement('span'); // Crear un elemento span para el texto del botón
@@ -121,15 +121,15 @@ BPPJ
         span.textContent = areaEditable.textContent || "Botón"; // Texto por defecto
         botonVista.appendChild(span); // Agregar el span al botón
         vistaPrevia.appendChild(botonVista); // Agregar el botón a la vista previa
-        
+
         // Configurar estilos iniciales
         botonVista.style.position = 'absolute'; // Posición absoluta para permitir el arrastre
         botonVista.style.cursor = 'move'; // Cambiar el cursor al arrastrar
-        
+
         // Inicializar posición y eventos
         inicializarPosicionBoton(); // Inicializar la posición del botón
         actualizarEstiloBoton(); // Actualizar el estilo del botón
-        
+
         // Agregar event listeners para drag and drop
         botonVista.addEventListener('mousedown', desplazar_ini); // listener que vigila el evento mousedown
         botonVista.addEventListener('touchstart', desplazar_ini, { passive: false });  //listener que vigila el evento touchstart
@@ -138,9 +138,9 @@ BPPJ
         document.addEventListener('touchmove', drag, { passive: false }); // listener que vigila el evento touchmove
         document.addEventListener('touchend', dragEnd); // listener que vigila el evento touchend
     }
-/* ------------------------
-     -- titulo eliminar boton--
-     ------------------------ */
+    /* ------------------------
+         -- titulo eliminar boton--
+         ------------------------ */
     // Función para eliminar el botón de la vista previa
     function eliminarBotonVista() { // funcion que elimina el boton de vista previa
         if (botonVista) { // if para verificar si el botonVista existe
@@ -151,15 +151,15 @@ BPPJ
             document.removeEventListener('mouseup', dragEnd); // eliminar listener del evento mouseup
             document.removeEventListener('touchmove', drag); // eliminar listener del evento touchmove
             document.removeEventListener('touchend', dragEnd); // eliminar listener del evento touchend
-            
+
             // Eliminar el botón
             vistaPrevia.removeChild(botonVista); // Remover el botón de la vista previa
             botonVista = null; //borrar la referencia al botón
         }
     }
-/* ------------------------
-     -- titulo editar boton--
-     ------------------------ */
+    /* ------------------------
+         -- titulo editar boton--
+         ------------------------ */
     // Esta función copia el texto (y su formato) al área de vista previa
     function actualizarTextoVista() {
         if (botonVista && areaEditable) {
@@ -173,26 +173,26 @@ BPPJ
     // Esta función cambia la forma y el borde del botón de vista previa
     function actualizarEstiloBoton() { // funcion que actualiza el estilo del boton de vista previa
         if (!botonVista) return; //if para verificar si el botonVista existe
-        
+
         const forma = document.getElementById('forma-boton'); //const para obtener el elemento forma-boton
         const colorBorde = document.getElementById('color-borde'); //const para obtener el elemento color-borde
         const anchoBorde = document.getElementById('ancho-borde'); //const para obtener el elemento ancho-borde
-        
+
         // Cambiamos la forma del botón
         let borderRadius = '4px'; //dejar el borde por defecto
         if (forma && forma.value === 'round') borderRadius = '20px'; // un if para verificar si la forma es round
         if (forma && forma.value === 'oval') borderRadius = '50px 20px'; // un if para verificar si la forma es oval
         if (forma && forma.value === 'circle') borderRadius = '50%'; // un if para verificar si la forma es circle
         botonVista.style.borderRadius = borderRadius; // Asignar el borderRadius al botón de vista previa
-        
+
         // Cambiamos el color y el ancho del borde
         if (colorBorde) botonVista.style.borderColor = colorBorde.value; // Asignar el color del borde
         if (anchoBorde) botonVista.style.borderWidth = anchoBorde.value + 'px'; // Asignar el ancho del borde
         botonVista.style.borderStyle = 'solid'; // Aseguramos que el borde sea sólido
     }
-/* ------------------------
-     --  eventos de botones--
-     ------------------------ */
+    /* ------------------------
+         --  eventos de botones--
+         ------------------------ */
     // Inicialización cuando el DOM esté listo
     (function init() { // funcion que inicializa el codigo
         // Eventos para los botones de agregar/eliminar
@@ -202,21 +202,21 @@ BPPJ
         if (eliminarBoton) { //if para verificar si el eliminarBoton existe
             eliminarBoton.addEventListener('click', eliminarBotonVista); // listener que vigila el evento click del boton eliminar
         }
-        
+
         // Eventos para el editor de texto
         if (barraHerramientas && areaEditable) { //if para verificar si la barraHerramientas y areaEditable existen
-            barraHerramientas.addEventListener('click', function(e) { // listener que vigila el evento click de la barraHerramientas
+            barraHerramientas.addEventListener('click', function (e) { // listener que vigila el evento click de la barraHerramientas
                 if (e.target.dataset.cmd) { // Verificar si el botón tiene un comando asociado
                     areaEditable.focus(); // Enfocar el área editable
                     document.execCommand(e.target.dataset.cmd, false, null); // Ejecutar el comando asociado al botón
                     actualizarTextoVista(); // Actualizar el texto de vista previa
                 }
             });
-            
+
             areaEditable.addEventListener('input', actualizarTextoVista); // listener que vigila el evento input del areaEditable
             areaEditable.addEventListener('blur', actualizarTextoVista); // listener que vigila el evento blur del areaEditable
         }
-        
+
         // Eventos para los controles de estilo del botón
         const forma = document.getElementById('forma-boton'); //const para obtener el elemento forma-boton
         const colorBorde = document.getElementById('color-borde'); //const para obtener el elemento color-borde
@@ -224,17 +224,19 @@ BPPJ
         const colorFondo = document.getElementById('color-fondo-boton'); //const para obtener el elemento color-fondo-boton
         const colorTexto = document.getElementById('color-texto-boton'); //const para obtener el elemento color-texto-boton
         const fuenteTexto = document.getElementById('fuente-texto-boton'); //const para obtener el elemento fuente-texto-boton
+        // TITULO FONDO
+        // TITULO COLOR FONDO
         
         if (colorFondo) { //if para verificar si el colorFondo existe
-            colorFondo.addEventListener('input', function() { // listener que vigila el evento input del colorFondo
+            colorFondo.addEventListener('input', function () { // listener que vigila el evento input del colorFondo
                 if (botonVista) { //if para verificar si el botonVista existe
                     botonVista.style.backgroundColor = colorFondo.value; // Asignar el color de fondo al botón de vista previa
                 }
             });
         }
-        
+
         if (colorTexto) { //if para verificar si el colorTexto existe
-            colorTexto.addEventListener('input', function() { // listener que vigila el evento input del colorTexto
+            colorTexto.addEventListener('input', function () { // listener que vigila el evento input del colorTexto
                 if (botonVista) { //if para verificar si el botonVista existe
                     const span = botonVista.querySelector('#texto-vista-previa'); //const para obtener el span del botonVista
                     if (span) { //if para verificar si el span existe
@@ -245,7 +247,7 @@ BPPJ
         }
 
         if (fuenteTexto) { //if para verificar si el fuenteTexto existe
-            fuenteTexto.addEventListener('change', function() { // listener que vigila el evento change del fuenteTexto
+            fuenteTexto.addEventListener('change', function () { // listener que vigila el evento change del fuenteTexto
                 if (botonVista) { //if para verificar si el botonVista existe
                     const span = botonVista.querySelector('#texto-vista-previa'); //const para obtener el span del botonVista
                     if (span) { //if para verificar si el span existe
@@ -254,12 +256,14 @@ BPPJ
                 }
             });
         }
-        
-        document.getElementById('imagen-fondo').addEventListener('change', function(e) { // listener que vigila el evento change del input de imagen
+
+        // TITULO AGREGAR IMAGEN DE FONDO
+
+        document.getElementById('imagen-fondo').addEventListener('change', function (e) { // listener que vigila el evento change del input de imagen
             const file = e.target.files[0]; // Obtener el primer archivo seleccionado
             if (!file) return; // Si no hay archivo, salir
             const reader = new FileReader(); //const para crear un nuevo FileReader
-            reader.onload = function(evt) { //reader.onload para manejar la carga del archivo
+            reader.onload = function (evt) { //reader.onload para manejar la carga del archivo
                 const vistaPrevia = document.querySelector('.vista-previa'); //const para obtener el elemento vista previa
                 vistaPrevia.style.backgroundImage = `url('${evt.target.result}')`; // Asignar la imagen de fondo a la vista previa
                 vistaPrevia.style.backgroundSize = 'cover'; // Ajustar el tamaño de la imagen de fondo
@@ -269,7 +273,7 @@ BPPJ
         });
     })();
 })();
-            reader.readAsDataURL(file); // Leer el archivo como una URL de datos al finalizar la carga
+reader.readAsDataURL(file); // Leer el archivo como una URL de datos al finalizar la carga
 
 /*  --------------------------------------------------------------------------------------------------------------------------- 
      ------------------------------------------------ FIN ITred Spa fondo.js --------------------------------------------------
