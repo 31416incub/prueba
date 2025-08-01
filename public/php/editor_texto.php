@@ -47,13 +47,14 @@ $mysqli = new mysqli('localhost', 'root', '', 'editor_elemento_bd');
 
         <div> <!--inicio div para ingresar texto-->
             <label>Texto:</label> <!--label para el campo de texto-->
-            <div id="texto-editable" class="editable-area" contenteditable="true"></div>
             <!--div editable para escribir texto-->
+            <div id="texto-editable" class="editable-area" contenteditable="true"></div>
         </div> <!--fin div ingresar texto-->
 
         <!-- TITULO NEGRITA, CURSIVA,SUBRAYADO,TACHAR, LISTA ORDENADA, LISTA DESORDENADA -->
 
-        <div class="toolbar"> <!--inicio div toolbar con herramientas de formato-->
+        <!--inicio div toolbar con herramientas de formato-->
+        <div class="toolbar">
             <button data-cmd="bold"><b>N</b></button> <!--boton para aplicar negrita-->
             <button data-cmd="italic"><i>K</i></button> <!--boton para aplicar cursiva-->
             <button data-cmd="underline"><u>U</u></button> <!--boton para aplicar subrayado-->

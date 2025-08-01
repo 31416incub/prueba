@@ -55,8 +55,8 @@ function mostrarContenido(seccion) {
                 // Cargar el JS del editor
                 const script = document.createElement('script'); // Crear un nuevo elemento script
                 script.src = '../js/fondo.js'; // Asignar la ruta del script que se va a cargar
+                // Opcional: código para inicializar algo extra
                 script.onload = () => {
-                    // Opcional: código para inicializar algo extra
                 };
                 document.body.appendChild(script); // Agregar el script al final del body
             })
@@ -73,7 +73,7 @@ function mostrarContenido(seccion) {
 /* ------------------------
      -- TITULO ASIGNAR EVENTO A CADA BOTON --
      ------------------------ */
-     
+
 menuBotones.forEach(boton => { // Iterar sobre cada botón del menú
     boton.addEventListener('click', function () { // Asignar un evento de clic a cada botón
         // Quitar clase activo de todos

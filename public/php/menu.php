@@ -31,8 +31,7 @@ $mysqli = new mysqli('localhost', 'root', '', 'editor_elemento_bd');
 <head> <!--carga de metadatos del documento-->
     <meta charset="UTF-8"> <!--codificacion de caracteres UTF-8-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--configuracion de vista para dispositivos moviles-->
-    <title>menu</title>
+    <title>menu</title> <!--titulo de la pagina-->
 
     <!-- Llama al archivo CSS -->
     <link rel="stylesheet" href="../css/menu.css">

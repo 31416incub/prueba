@@ -44,18 +44,17 @@ $mysqli = new mysqli('localhost', 'root', '', 'editor_elemento_bd');
 
         <!-- TITULO COLOR FONDO -->
 
-        <div> <!--inicio div para cambiar color de fondo-->
+        <!--inicio div para cambiar color de fondo-->
+        <div>
             <label for="color-fondo-editor">Color de fondo:</label> <!--label para cambiar color de fondo del editor-->
-            <input type="color" id="color-fondo-editor" value="#fafafa">
-            <!--input color para seleccionar color de fondo-->
+            <input type="color" id="color-fondo-editor" value="#fafafa"> <!--input color para seleccionar color de fondo-->
         </div> <!--fin div cambiar color de fondo-->
 
         <!-- TITULO AGREGAR IMAGEN -->
 
         <div> <!--inicio div para agregar imagen de fondo-->
             <label for="imagen-fondo-editor">Agregar imagen:</label> <!--label para agregar imagen de fondo-->
-            <input type="file" id="imagen-fondo-editor" accept="image/*">
-            <!--input file para seleccionar imagen de fondo-->
+            <input type="file" id="imagen-fondo-editor" accept="image/*"> <!--input file para seleccionar imagen de fondo-->
         </div> <!--fin div agregar imagen de fondo-->
     </div> <!--fin div clase fondo-editor-->
 
